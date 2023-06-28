@@ -38,14 +38,36 @@ const teamBusiness = [
     MILESTONE 1
 */
 
-for (let index = 0; index < teamBusiness.length; index++) {
-    const element = teamBusiness[index];
+// for (let index = 0; index < teamBusiness.length; index++) {
+//     const element = teamBusiness[index];
     
-    for (const key in element) {
-        console.log(element[key]);
-    }
-}
+//     for (const key in element) {
+//         console.log(element[key]);
+//     }
+// }
 
 /*
     MILESTONE 2
 */
+
+
+// Funzione per stampare le informazioni su DOM
+function stampaInformazioni() {
+  const container = document.getElementById("ul");
+
+    for (let i = 0; i < teamBusiness.length; i++) {
+        console.log(teamBusiness[i]);
+        const element = teamBusiness[i];
+        console.log(typeof(element))
+
+        const newLi = document.createElement('li');
+        newLi.innerHTML = `${element.name} - ${element.businessRole}`
+        const newImg = '<img src="">';
+
+        
+        container.append(newLi);
+    }
+  }
+  
+  // Chiamata alla funzione per stampare le informazioni
+ document.addEventListener('DOMContentLoaded',stampaInformazioni);
